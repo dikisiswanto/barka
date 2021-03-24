@@ -1,5 +1,5 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');?>
-<?php defined('THEME_VERSION') or define('THEME_VERSION', 'v1.0') ?>
+<?php defined('THEME_VERSION') or define('THEME_VERSION', 'v1.1') ?>
 
 <title><?=isset($page_title) ? $page_title . ' | ' : ''?><?=$this->session->school_name?></title>
 <meta charset="utf-8" />
