@@ -27,6 +27,16 @@ Aktif: Ya
 
 - Buka halaman situs untuk melihat perubahannya.
 
+## Kustomisasi warna tema
+
+Tema ini mendukung variasi warna sesuai yang diinginkan. Silakan buka file `assets/css/custom.css` untuk melihat opsi yang tersedia.
+
+## Lisensi dan Syarat
+
+Lisensi tema ini memperbolehkan Anda untuk menggunakan, menyebarluaskan, dan memodifikasi kode sumber. Segala bentuk modifikasi dan turunannya tetap merujuk pada lisensi awal tema ini.
+
+Anda **DILARANG** untuk menyebarkan atau memperjualbelikan tema ini untuk tujuan komersial dalam bentuk apapun, baik dalam versi asli maupun hasil modifikasi. Anda juga tidak diperkenankan untuk menghapus atau menghilangkan informasi pemegang hak cipta atas tema ini.
+
 ## Kontribusi
 
 Anda dapat turut serta mengembangkan tema ini dengan melakukan [pull request](https://github.com/dikisiswanto/barka/pulls).
