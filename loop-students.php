@@ -101,7 +101,7 @@
 </style>
 <main class="container space-y-5 my-5 flex-1">
   <div class="space-y-4">
-    <h3 class="font-heading text-2xl capitalize font-black text-title"><span class="fa fa-student"></span> <?= ucwords($page_title) ?></h3>
+    <h3 class="font-heading text-2xl font-black text-title"><span class="fa fa-student"></span> <?= ucwords($page_title) ?></h3>
     <form onsubmit="return false;" class="mb-3">
       <div class="grid gap-4 lg:grid-cols-3 items-center lg:w-3/4">
         <div class="w-full">

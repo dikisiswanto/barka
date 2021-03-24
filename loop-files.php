@@ -25,30 +25,30 @@
 
   function get_files() {
     page++;
-    var data = {
+    const data = {
       page_number: page,
       slug: '<?=$this->uri->segment(2)?>'
     };
     if ( page <= parseInt(total_page) ) {
-      _H.Loading( true );
+      setLoading( true );
       $.post( _BASE_URL + 'public/download/get_files', data, function( response ) {
-        _H.Loading( false );
-        var res = _H.StrToObject( response );
-        var rows = res.rows;
-        var str = '';
-        var no = parseInt($('.number:last').text()) + 1;
-        for (var z in rows) {
+        setLoading( false );
+        const res = response ;
+        const rows = res.rows;
+        let html = '';
+        let no = parseInt($('.number:last').text()) + 1;
+        for (const z in rows) {
           var row = rows[ z ];
-          str += '<tr>';
-          str += '<td class="number">' + no + '</td>';
-          str += '<td>' + row.file_title + '</td>';
-          str += '<td>' + (_H.FormatBytes(row.file_size * 1024)) + '</td>';
-          str += '<td>' + row.file_ext + '</td>';
-          str += '<td>' + row.file_counter + '</td>';
-          str += '<td>';
-          str += '<a href="' + _BASE_URL + 'public/download/force_download/' + row.id + '"><i class="fa fa-download"></i></a>';
-          str += '</td>';
-          str += '</tr>';
+          html += '<tr>';
+          html += '<td class="number">' + no + '</td>';
+          html += '<td>' + row.file_title + '</td>';
+          html += '<td>' + (_H.FormatBytes(row.file_size * 1024)) + '</td>';
+          html += '<td>' + row.file_ext + '</td>';
+          html += '<td>' + row.file_counter + '</td>';
+          html += '<td>';
+          html += '<a href="' + _BASE_URL + 'public/download/force_download/' + row.id + '"><i class="fa fa-download"></i></a>';
+          html += '</td>';
+          html += '</tr>';
           no++;
         }
         var elementId = $("tbody > tr:last");
@@ -58,39 +58,37 @@
     }
   }
 </script>
-<div class="col-lg-12 col-md-12 col-sm-12 ">
-  <h5 class="page-title mb-3"><?=strtoupper($page_title)?></h5>
-  <div class="card rounded-0 border border-secondary mb-3">
-    <div class="card-body p-2 mb-0">
-      <table class="table table-striped table-bordered mb-0">
-        <thead>
+
+<main class="container space-y-5 my-5 flex-1">
+  <div class="space-y-4">
+    <h3 class="font-heading text-2xl font-black text-title"><span class="fa fa-bar"></span> <?= ucwords($page_title) ?></h3>
+    <table class="table w-full table-auto">
+      <thead>
+        <tr>
+          <th width="40px">NO</th>
+          <th>NAMA FILE</th>
+          <th>UKURAN</th>
+          <th>TIPE</th>
+          <th>DIUNDUH</th>
+          <th width="40px" class="text-center"><i class="fa fa-download"></i></th>
+        </tr>
+      </thead>
+      <tbody>
+        <?php $no = 1; foreach($query->result() as $row) { ?>
           <tr>
-            <th width="40px">NO</th>
-            <th>NAMA FILE</th>
-            <th>UKURAN</th>
-            <th>TIPE</th>
-            <th>DIUNDUH</th>
-            <th width="40px" class="text-center"><i class="fa fa-download"></i></th>
+            <td class="number"><?=$no?></td>
+            <td><?=$row->file_title?></td>
+            <td><?=filesize_formatted($row->file_size * 1024)?></td>
+            <td><?=$row->file_ext?></td>
+            <td><?=$row->file_counter?> Kali</td>
+            <td class="text-center">
+              <a href="<?=site_url('public/download/force_download/'.$row->id)?>"><i class="fa fa-download"></i></a>
+            </td>
           </tr>
-        </thead>
-        <tbody>
-          <?php $no = 1; foreach($query->result() as $row) { ?>
-            <tr>
-              <td class="number"><?=$no?></td>
-              <td><?=$row->file_title?></td>
-              <td><?=filesize_formatted($row->file_size * 1024)?></td>
-              <td><?=$row->file_ext?></td>
-              <td><?=$row->file_counter?> Kali</td>
-              <td class="text-center">
-                <a href="<?=site_url('public/download/force_download/'.$row->id)?>"><i class="fa fa-download"></i></a>
-              </td>
-            </tr>
-            <?php $no++; } ?>
-        </tbody>
-      </table>
-    </div>
+          <?php $no++; } ?>
+      </tbody>
+    </table>
+    <div class="loading-area"></div>
+    <button type="button" onclick="get_files()" class="bg-secondary opacity-80 transition duration-100 hover:opacity-100 text-white rounded py-2 px-5 text-center more-files"><i class="fa fa-refresh"></i> Tampilkan Lebih Banyak</button>
   </div>
-  <div class="justify-content-between align-items-center float-right mb-3 w-100 more-files">
-    <button type="button" onclick="get_files()" class="btn action-button rounded-0 float-right"><i class="fa fa-refresh"></i> File Lainnya</button>
-  </div>
-</div>
+</main>

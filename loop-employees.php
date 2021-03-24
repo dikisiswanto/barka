@@ -103,7 +103,7 @@ function get_employees() {
 </style>
 <main class="container space-y-5 my-5 flex-1">
   <div class="space-y-4">
-    <h3 class="font-heading text-2xl capitalize font-black text-title"><span class="fa fa-bar"></span> <?= ucwords($page_title) ?></h3>
+    <h3 class="font-heading text-2xl font-black text-title"><span class="fa fa-bar"></span> <?= ucwords($page_title) ?></h3>
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
       <?php foreach($query->result() as $row) : ?>
         <div class="profile-employees">
