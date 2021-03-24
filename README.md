@@ -29,7 +29,7 @@ Aktif: Ya
 
 ## Kontribusi
 
-Anda dapat turut serta mengembangkan tema ini denga melakukan [pull request](https://github.com/dikisiswanto/barka/pulls).
+Anda dapat turut serta mengembangkan tema ini dengan melakukan [pull request](https://github.com/dikisiswanto/barka/pulls).
 
 ## Donasi
 
