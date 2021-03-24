@@ -23,7 +23,7 @@ Aktif: Ya
 
 - Setelah penambahan berhasil, tekan tombol upload [ikon berbentuk panah atas] (terletak disamping nama tema);
 
-- Pilih berkas tema silir yang sudah diunduh pada langkah pertama, kemudian tekan tombol `Upload`;
+- Pilih berkas tema barka yang sudah diunduh pada langkah pertama, kemudian tekan tombol `Upload`;
 
 - Buka halaman situs untuk melihat perubahannya.
 
