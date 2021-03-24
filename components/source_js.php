@@ -10,4 +10,4 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 <script src="<?=base_url('views/'. THEME_PATH . 'assets/js/frontend.min.js');?>"></script>
-<script src="<?=base_url('views/'. THEME_PATH . 'assets/js/script.min.js');?>"></script>
+<script src="<?=base_url('views/'. THEME_PATH . 'assets/js/script.min.js?' . THEME_VERSION);?>"></script>

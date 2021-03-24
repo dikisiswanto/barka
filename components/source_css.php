@@ -9,5 +9,5 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/datepicker/1.0.10/datepicker.min.css" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
-<?=link_tag('views/' . THEME_PATH . 'assets/css/style.min.css')?>
-<?=link_tag('views/' . THEME_PATH . 'assets/css/custom.css')?>
+<?=link_tag('views/' . THEME_PATH . 'assets/css/style.min.css?' . THEME_VERSION )?>
+<?=link_tag('views/' . THEME_PATH . 'assets/css/custom.css?' . THEME_VERSION )?>
