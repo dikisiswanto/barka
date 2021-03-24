@@ -92,6 +92,9 @@
               <figcaption class="py-2 text-center">
                 <?= $album->album_title ?>
               </figcaption>
+              <div class="px-3 py-2">
+                <button type="button" onclick="photo_preview(<?=$album->id?>)" class="bg-secondary text-white block w-full py-2 text-center mx-2"><i class="fa fa-search mr-2"></i> Lihat</button>
+              </div>
             </figure>
           <?php endforeach ?>
         </div>
