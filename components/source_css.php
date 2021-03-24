@@ -10,5 +10,4 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
 <?=link_tag('views/' . THEME_PATH . 'assets/css/style.min.css')?>
-<?=link_tag('assets/css/loading.css');?>
-<?=link_tag('assets/css/loading.css');?>
+<?=link_tag('views/' . THEME_PATH . 'assets/css/custom.css')?>

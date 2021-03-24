@@ -36,8 +36,16 @@
 <meta name="webcrawlers" content="all" />
 <meta name="rating" content="general" />
 <meta name="spiders" content="all" />
-<meta itemprop="name" content="<?=$this->session->school_name;?>" />
-<meta itemprop="description" content="<?=$this->session->meta_description;?>" />
-<meta itemprop="image" content="<?=base_url('media_library/images/'. $this->session->logo);?>" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="icon" href="<?=base_url('media_library/images/'.$this->session->favicon);?>">
+<meta itemprop="name" content="<?=__session('school_name');?>" />
+<meta itemprop="description" content="<?=__session('meta_description');?>" />
+<meta itemprop="image" content="<?=base_url('media_library/images/'. __session('logo'));?>" />
+<meta name="csrf-token" content="<?=__session('csrf_token')?>">
+<?php if (isset($post_type) && $post_type == 'post') { ?>
+  <meta property="og:url" content="<?=current_url()?>" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="<?=$query->post_title?>" />
+  <meta property="og:description" content="<?=word_limiter(strip_tags($query->post_content), 30)?>" />
+  <meta property="og:image" content="<?=base_url('media_library/posts/large/'.$query->post_image)?>" />
+<?php } ?>
+<link rel="icon" href="<?=base_url('media_library/images/'.__session('favicon'));?>">
+<link rel="alternate" type="application/rss+xml" title="<?=__session('school_name');?> Feed" href="<?=base_url('feed')?>" />
