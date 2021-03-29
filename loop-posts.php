@@ -81,7 +81,7 @@
           const monthNameInID = ['Jan', 'Peb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul', 'Agu', 'Sep', 'Okt', 'Nop', 'Des'];
           const dateVal = date.getDate();
           const monthVal = date.getMonth();
-          const link = `${_BASE_URL}read/${row.id}/row.post_slug`;
+          const link = `${_BASE_URL}read/${row.id}/${row.post_slug}`;
           const template = `
           <div class="bg-white overflow-hidden relative flex flex-col lg:flex-row justify-between post" data-aos="fade-in">
             <div class="w-full h-48 lg:h-full lg:w-5/12 flex-shrink-0 bg-gray-300 flex items-center justify-center">
