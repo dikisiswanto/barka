@@ -49,7 +49,7 @@
     <h5 class="text-title font-bold font-heading text-lg lg:text-xl px-4">Tautan</h5>
     <div class="px-4 divide-y">
       <?php foreach($links->result() as $link) : ?>
-        <a href="<?= $link->link_url ?>" title="<?= $link->link_title ?>" target="<?= $link->link_target ?>" class="list-group-item"><?= $link->link_title ?></a>
+        <a href="<?= $link->link_url ?>" title="<?= $link->link_title ?>" target="<?= $link->link_target ?>" class="block"><?= $link->link_title ?></a>
       <?php endforeach ?>
     </div>
   </div>
