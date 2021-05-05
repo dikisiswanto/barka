@@ -51,13 +51,13 @@
     const data = {
       'page_number': page
     };
-    if (segment_1 == 'category') {
+    if (segment_1 == 'kategori') {
       data['category_slug'] = segment_2;
       url = _BASE_URL + 'public/post_categories/get_posts';
     } else if (segment_1 == 'tag') {
       data['tag'] = segment_2;
       url = _BASE_URL + 'public/post_tags/get_posts';
-    } else if (segment_1 == 'archives') {
+    } else if (segment_1 == 'arsip') {
       data['year'] = segment_2;
       data['month'] = segment_3;
       url = _BASE_URL + 'public/archives/get_posts';
@@ -72,7 +72,6 @@
         let html = '';
         for (const z in rows) {
           const row = rows[ z ];
-          console.log(row)
           let image = `${_BASE_URL}media_library/posts/medium/${row.post_image}`;
           const isImageExist = isUrlFound(image);
           image = isImageExist ? image : '<?=base_url('media_library/images/'. $this->session->logo);?>';

@@ -23,7 +23,10 @@
         <img src="<?=base_url('media_library/posts/large/'.$query->post_image)?>" alt="<?= $query->post_title ?>" class="max-w-full w-full h-auto">
       <?php endif ?>
 
-      <?= $query->post_content ?>
+      <div class="content space-y-4">
+        <?= $query->post_content ?>
+      </div>
+
 
       <span class="block font-bold">Bagikan artikel ini:</span>
       <div class="flex space-x-2">

@@ -1309,6 +1309,81 @@ video {
   }
 }
 
+.content h1, .content h2, .content h3, .content h4, .content h5, .content h6 {
+    font-weight: 700;
+  }
+
+.content ol, .content ul {
+    margin-left: 1.25rem;
+  }
+
+.content ol {
+    list-style-type: decimal;
+  }
+
+.content ul {
+    list-style-type: disc;
+  }
+
+.content img {
+    max-width: 100%;
+    --tw-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  }
+
+.content li {
+    padding-top: 0.125rem;
+    padding-bottom: 0.125rem;
+  }
+
+.content table {
+    background-color: transparent !important;
+    border-collapse: collapse !important;
+    border-width: 1px !important;
+  }
+
+.content table thead {
+      --tw-bg-opacity: 1 !important;
+      background-color: rgba(75, 85, 99, var(--tw-bg-opacity)) !important;
+      border-color: var(--primary-color) !important;
+      border-width: 1px !important;
+      --tw-text-opacity: 1 !important;
+      color: rgba(255, 255, 255, var(--tw-text-opacity)) !important;
+    }
+
+.content table thead th {
+        --tw-border-opacity: 1 !important;
+        border-color: rgba(255, 255, 255, var(--tw-border-opacity)) !important;
+        border-width: 1px !important;
+        --tw-text-opacity: 1 !important;
+        color: rgba(255, 255, 255, var(--tw-text-opacity)) !important;
+      }
+
+.content table tr, .content table td, .content table th {
+      --tw-border-opacity: 1 !important;
+      border-color: rgba(209, 213, 219, var(--tw-border-opacity)) !important;
+      border-width: 1px !important;
+      padding-top: 0.5rem !important;
+      padding-bottom: 0.5rem !important;
+      padding-left: 0.5rem !important;
+      padding-right: 0.5rem !important;
+    }
+
+.content table tr.highlighted {
+      background-color: var(--secondary-color) !important;
+      --tw-text-opacity: 1 !important;
+      color: rgba(255, 255, 255, var(--tw-text-opacity)) !important;
+    }
+
+.content table tbody tr:nth-child(even) {
+        --tw-bg-opacity: 1;
+        background-color: rgba(243, 244, 246, var(--tw-bg-opacity));
+      }
+
+.content .table-responsive {
+    overflow: auto;
+  }
+
 .form-input {
     --tw-border-opacity: 1;
     border-color: rgba(209, 213, 219, var(--tw-border-opacity));
