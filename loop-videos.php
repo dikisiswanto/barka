@@ -42,7 +42,7 @@
           html += template;
         }
         var el = $(".videos:last");
-        $( str ).insertAfter(el);
+        $( html ).insertAfter(el);
         if (page == parseInt(total_page)) $('.more-videos').remove();
       });
     }
