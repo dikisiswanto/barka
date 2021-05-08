@@ -41,7 +41,7 @@
           `;
           html += template;
         }
-        var el = $("div.videos:last");
+        var el = $(".videos:last");
         $( str ).insertAfter(el);
         if (page == parseInt(total_page)) $('.more-videos').remove();
       });
