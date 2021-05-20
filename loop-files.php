@@ -75,7 +75,7 @@
       </thead>
       <tbody>
         <?php $no = 1; foreach($query->result() as $row) { ?>
-          <tr>
+          <tr class="text-center">
             <td class="number"><?=$no?></td>
             <td><?=$row->file_title?></td>
             <td><?=filesize_formatted($row->file_size * 1024)?></td>

@@ -1,8 +1,9 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');?>
 <?php defined('THEME_PATH') or define('THEME_PATH', 'themes/barka/') ?>
+<?php defined('THEME_VERSION') or define('THEME_VERSION', 'v1.3') ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
   <?php $this->load->view(THEME_PATH . 'components/meta') ?>
   <?php $this->load->view(THEME_PATH . 'components/source_css') ?>
@@ -29,7 +30,7 @@
 
   <?php $this->load->view($content)?>
 
-  <!-- COPYRIGHT -->
+  <!-- COPYRIGHT - DO NOT MODIFY!-->
     <?php $this->load->view(THEME_PATH . 'components/footer') ?>
   <!-- END COPYRIGHT -->
 
