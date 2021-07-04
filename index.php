@@ -1,6 +1,6 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');?>
 <?php defined('THEME_PATH') or define('THEME_PATH', 'themes/barka/') ?>
-<?php defined('THEME_VERSION') or define('THEME_VERSION', 'v1.4') ?>
+<?php defined('THEME_VERSION') or define('THEME_VERSION', 'v1.4.1') ?>
 
 <!DOCTYPE html>
 <html lang="id">
