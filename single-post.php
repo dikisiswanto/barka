@@ -1,5 +1,44 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');?>
 
+<script>
+  let page = 1;
+  const totalPage = <?= $total_page ?>;
+
+  $(document).ready(function() {
+    if (parseInt(totalPage) == page || parseInt(totalPage) == 0) {
+      $('.more-comments').remove();
+    }
+  });
+
+  function get_post_comments() {
+    page++;
+    const data = {
+      page_number: page,
+      comment_post_id: <?=$this->uri->segment(2)?>
+    };
+    if ( page <= parseInt(totalPage) ) {
+      $.post( _BASE_URL + 'public/post_comments/get_post_comments', data, function( response ) {
+        const res = _H.StrToObject( response );
+        const rows = res.comments;
+        let html = '';
+        for (const z in rows) {
+          const row = rows[ z ];
+          html = `<div class="bg-white px-5 py-4 shadow space-y-2 border comment">
+              <blockquote class="italic">"${row.comment_content}"</blockquote>
+              <div class="text-xs space-x-3">
+                <span><i class="fa fa-calendar-o fa-sm mr-1 text-secondary"></i> ${row.created_at.substr(8, 2)} ${row.created_at.substr(5, 2)} ${row.created_at.substr(0, 4)}</span>
+                <span><i class="fa fa-user fa-sm mr-1 text-secondary"></i> ${row.comment_author}</span>
+              </div>
+            </div>`;
+        }
+        const elementId = $(".comment:last");
+        $( html ).insertAfter( elementId );
+        if ( page == parseInt(totalPage) ) $('.more-comments').remove();
+      });
+    }
+  }
+</script>
+
 <main class="container space-y-5 my-5 flex-1">
   <div class="flex flex-col lg:flex-row items-start gap-x-6 relative space-y-5 lg:space-y-0">
     <article class="w-full lg:w-2/3 space-y-4">
@@ -17,6 +56,7 @@
           <?php endif ?>
         </li>
         <li><span class="fa fa-user mr-2 text-secondary"></span> <?=$post_author?></li>
+        <li><span class="fa fa-comments mr-2 text-secondary"></span> <?= $post_comments->num_rows() ?> komentar</li>
       </ul>
 
       <?php if($post_type == 'post' && is_file('./media_library/posts/large/'.$query->post_image)) : ?>
@@ -44,6 +84,30 @@
           </a>
       </div>
 
+      <?php if($post_comments->num_rows() > 0) : ?>
+        <section class="space-y-2 py-5">
+          <h4 class="text-lg font-bold font-heading"><?= $post_comments->num_rows() ?> Komentar</h4>
+          <?php foreach($post_comments->result() as $comment) : ?>  
+            <div class="bg-white px-5 py-4 shadow space-y-2 border comment">
+              <blockquote class="italic">"<?=strip_tags($comment->comment_content)?>"</blockquote>
+              <div class="text-xs space-x-3">
+                <span><i class="fa fa-calendar-o fa-sm mr-1 text-secondary"></i> <?=date('d M Y H:i', strtotime($comment->created_at))?></span>
+                <span><i class="fa fa-user fa-sm mr-1 text-secondary"></i> <?=$comment->comment_author?></span>
+              </div>
+            </div>
+            <?php if(! empty($comment->comment_reply)) : ?>
+              <div class="bg-white px-5 py-4 shadow space-y-2 border comment">
+                <blockquote class="italic">"<?=strip_tags($comment->comment_reply)?>"</blockquote>
+                <div class="text-xs space-x-3">
+                  <span><i class="fa fa-user fa-sm mr-1 text-secondary"></i> <?=$comment->comment_author?></span>
+                </div>
+              </div>
+            <?php endif ?>
+          <?php endforeach ?>
+          <button type="button" onclick="get_post_comments()" class="bg-secondary opacity-80 transition duration-100 hover:opacity-100 text-white rounded py-2 px-5 more-comments"><i class="fa fa-refresh"></i> Komentar Lainnya</button>
+        </section>
+      <?php endif ?>
+
       <?php if((
             $query->post_comment_status == 'open' &&
             $this->session->comment_registration == 'true' &&
@@ -54,18 +118,47 @@
             $this->session->comment_registration == 'false'
           )) : ?>
 
-        <div class="py-2">
-          <div id="disqus_thread"></div>
-        </div>
-        
-        <script>
-          (function() { // DON'T EDIT BELOW THIS LINE
-          var d = document, s = d.createElement('script');
-          s.src = 'https://celebiz.disqus.com/embed.js';
-          s.setAttribute('data-timestamp', +new Date());
-          (d.head || d.body).appendChild(s);
-          })();
-        </script>
+        <form action="" class="space-y-2 py-5" method="POST">
+          <h4 class="text-lg font-bold font-heading">Beri Komentar</h4>
+          <div class="flex flex-col lg:flex-row">
+            <label for="comment_author" class="lg:w-1/4 pt-1">Nama Lengkap <span style="color: red">*</span></label>
+            <div class="lg:w-3/4">
+              <input type="text" class="form-input w-full" id="comment_author" name="comment_author">
+            </div>
+          </div>
+          <div class="flex flex-col lg:flex-row">
+            <label for="comment_email" class="lg:w-1/4 pt-1">Email <span style="color: red">*</span></label>
+            <div class="lg:w-3/4">
+              <input type="text" class="form-input w-full" id="comment_email" name="comment_email">
+            </div>
+          </div>
+          <div class="flex flex-col lg:flex-row">
+            <label for="comment_url" class="lg:w-1/4 pt-1">URL</label>
+            <div class="lg:w-3/4">
+              <input type="text" class="form-input w-full" id="comment_url" name="comment_url">
+            </div>
+          </div>
+          <div class="flex flex-col lg:flex-row">
+            <label for="comment_content" class="lg:w-1/4 pt-1">Komentar <span style="color: red">*</span></label>
+            <div class="lg:w-3/4">
+              <textarea class="form-textarea w-full" id="comment_content" name="comment_content" rows="4"></textarea>
+            </div>
+          </div>
+          <?php if (NULL !== __session('recaptcha_status') && __session('recaptcha_status') == 'enable') : ?>
+            <div class="flex flex-col lg:flex-row">
+              <label class="lg:w-1/4 pt-1"></label>
+              <div class="lg:w-3/4">
+                <div class="g-recaptcha" data-sitekey="<?=$recaptcha_site_key?>"></div>
+              </div>
+            </div>
+          <?php endif ?>
+          <input type="hidden" name="comment_post_id" id="comment_post_id" value="<?=$this->uri->segment(2)?>" class="hidden w-0">
+          <div class="flex flex-col lg:flex-row pt-3">
+            <span class="lg:w-1/4">
+            </span>
+            <button type="submit" onclick="post_comments(); return false;" class="bg-secondary opacity-80 transition duration-100 hover:opacity-100 text-white rounded py-2 px-5"><i class="fa fa-send mr-2"></i> Kirim</button>
+          </div>
+        </form>
       <?php endif ?>
 
       <?php if($query->post_type == 'post') : ?>

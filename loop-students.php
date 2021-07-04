@@ -15,27 +15,12 @@
     return values;
   }
 
-  function setLoading(state) {
-    const loading = `
-      <div class="fixed top-0 right-0 left-0 bottom-0 w-full min-h-screen bg-black bg-opacity-20 flex items-center justify-center text-white z-50 flex-col">
-        <i class="fa fa-spinner fa-spin text-5xl" aria-label="Loading..."></i>
-        <span>Memuat...</span>
-      </div>
-    `;
-
-    if (state) {
-      $('.loading-area').html(loading);
-    } else {
-      $('.loading-area').html('')
-    }
-  }
-
   function get_students() {
     const values = get_values();
     if (values['academic_year_id'] && values['class_group_id']) {
-      setLoading(true);
+      _H.Loading(true);
       $.post( _BASE_URL + 'public/student_directory/get_students', values, function( response ) {
-        setLoading(false);
+        _H.Loading(false);
         const res = response;
         const rows = res.rows;
         let html = '';

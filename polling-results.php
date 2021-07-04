@@ -2,32 +2,32 @@
 
 <script src="<?=base_url('assets/plugins/Chart.js');?>"></script>
 <script type="text/javascript">
-$( document ).ready( function() {
-  var element_id = document.getElementById('canvas');
-  new Chart(element_id, {
-    type: 'bar',
-    data: {
-      labels: <?=$labels;?>,
-      datasets: [{
-        label: '',
-        data: <?=$data;?>,
-        borderWidth: 2,
-        backgroundColor: 'rgba(75, 192, 192, 0.2)',
-        borderColor: 'rgba(75, 192, 192, 1)'
-      }]
-    },
-    options: {
-      responsive: true,
-      scales: {
-        yAxes: [{
-          ticks: {
-            beginAtZero:true
-          }
+  $( document ).ready( function() {
+    const element_id = document.getElementById('canvas');
+    new Chart(element_id, {
+      type: 'bar',
+      data: {
+        labels: <?=$labels;?>,
+        datasets: [{
+          label: '',
+          data: <?=$data;?>,
+          borderWidth: 2,
+          backgroundColor: 'rgba(75, 192, 192, 0.2)',
+          borderColor: 'rgba(75, 192, 192, 1)'
         }]
+      },
+      options: {
+        responsive: true,
+        scales: {
+          yAxes: [{
+            ticks: {
+              beginAtZero:true
+            }
+          }]
+        }
       }
-    }
+    });
   });
-});
 </script>
 <main class="container space-y-5 my-5 flex-1">
   <div class="flex flex-col lg:flex-row items-start gap-x-6 relative space-y-5 lg:space-y-0">

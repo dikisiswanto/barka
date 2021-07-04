@@ -8,30 +8,15 @@ $(document).ready(function() {
   }
 });
 
-function setLoading(state) {
-  const loading = `
-    <div class="fixed top-0 right-0 left-0 bottom-0 w-full min-h-screen bg-black bg-opacity-20 flex items-center justify-center text-white z-50 flex-col">
-      <i class="fa fa-spinner fa-spin text-5xl" aria-label="Loading..."></i>
-      <span>Memuat...</span>
-    </div>
-  `;
-
-  if (state) {
-    $('.loading-area').html(loading);
-  } else {
-    $('.loading-area').html('')
-  }
-}
-
 function get_alumni() {
   page++;
   var data = {
     page_number: page
   };
   if ( page <= parseInt(total_page) ) {
-    setLoading( true );
+    _H.Loading( true );
     $.post( _BASE_URL + 'public/alumni_directory/get_alumni', data, function( response ) {
-      setLoading( false );
+      _H.Loading( false );
       const res = response;
       const rows = res.rows;
       let html = '';
@@ -166,7 +151,6 @@ function get_alumni() {
         </div>
       <?php endforeach ?>
     </div>
-    <div class="loading-area"></div>
     <button type="button" onclick="get_alumni()" class="bg-secondary opacity-80 transition duration-100 hover:opacity-100 text-white rounded py-2 px-5 text-center more-alumni"><i class="fa fa-refresh"></i> Tampilkan Lebih Banyak</button>
   </div>
 </main>

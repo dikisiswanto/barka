@@ -16,20 +16,6 @@
     }
   }
 
-  function setLoading(state) {
-    const loading = `
-      <div class="fixed top-0 right-0 left-0 bottom-0 w-full min-h-screen bg-black bg-opacity-20 flex items-center justify-center text-white z-50 flex-col">
-        <i class="fa fa-spinner fa-spin text-5xl" aria-label="Loading..."></i>
-        <span>Memuat...</span>
-      </div>
-    `
-    if (state) {
-      $('.loading-area').html(loading);
-    } else {
-      $('.loading-area').html('')
-    }
-  }
-
   function remove_tags(input) {
     return input.replace(/(<([^>]+)>)/ig,"");
   }
@@ -62,10 +48,10 @@
       data['month'] = segment_3;
       url = _BASE_URL + 'public/archives/get_posts';
     }
-    setLoading(true);
+    _H.Loading(true);
     if ( page <= parseInt(total_page) ) {
       $.post( url, data, function( response ) {
-        setLoading(false)
+        _H.Loading(false)
         const res = response;
         const rows = res.rows;
         const total_rows = res.total_rows;
@@ -153,7 +139,6 @@
           <?php endforeach ?>
         <?php endif ?>
       </div>
-      <div class="loading-area"></div>
       <button class="bg-secondary opacity-80 transition duration-100 hover:opacity-100 text-white rounded py-2 px-5 load-more" data-aos="fade-up" onclick="get_posts()"><i class="fa fa-loading"></i> Muat Artikel Selanjutnya</button>
     </div>
 
