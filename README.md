@@ -1,5 +1,5 @@
 # Tema Barka
-![screenshot](https://i.ibb.co/G9Mdg7M/barka-post.png)
+![screenshot](https://blogger.googleusercontent.com/img/a/AVvXsEjOEBjVmlJ5NKWS1cq__AX4-9NA3WZjhD7lm8jt063ZmrzwdhGO_TXFee9U3ag9zO37P6j3SG1upTdhK_vPzbEe0VISqlJRcq_M7i_bEJQweZWsGf7bVYlg471vRFTeCRVR0o3rVxthajpZBie_JwjJSCdfv2ihMEsUV_WpstR-2UPJA98F-Kkp3vK_0g=w640-h400)
 
 Tema barka adalah tema khusus untuk CMS Sekolahku ([sekolahku.web.id](https://sekolahku.web.id)). Tema ini dikembangkan dengan basis `tailwindCSS`
 
