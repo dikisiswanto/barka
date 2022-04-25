@@ -42,7 +42,7 @@
 <main class="container space-y-5 my-5 flex-1">
   <div class="flex flex-col lg:flex-row items-start gap-x-6 relative space-y-5 lg:space-y-0">
     <article class="w-full lg:w-2/3 space-y-4">
-      <h2 class="text-title lg:text-3xl text-xl font-bold font-heading"><?= $query->post_title ?></h2>
+      <h1 class="text-title lg:text-3xl text-xl font-bold font-heading"><?= $query->post_title ?></h1>
       <ul class="lg:space-x-5 flex flex-col lg:flex-row flex-wrap text-sm">
         <li><span class="fa fa-calendar mr-2 text-secondary"></span> <?=day_name(date('N', strtotime($query->created_at)))?>, <?=indo_date(substr($query->created_at, 0, 10))?></li>
         

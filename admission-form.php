@@ -8,7 +8,7 @@
   })
 </script>
 <main class="container space-y-5 my-5">
-  <h2 class="text-title text-2xl font-bold font-heading"><?= $page_title ?></h2>
+  <h1 class="text-title text-2xl font-bold font-heading"><?= $page_title ?></h1>
     
   <form action="" class="space-y-3">
     <h6 class="lg:text-xl text-lg font-bold font-heading mb-3">Registrasi <?=__session('_student')?></h6>

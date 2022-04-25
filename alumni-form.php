@@ -8,7 +8,7 @@
   })
 </script>
 <main class="container space-y-5 my-5 flex-1">
-  <h2 class="text-title text-2xl font-bold font-heading"><?= ucwords($page_title) ?></h2>
+  <h1 class="text-title text-2xl font-bold font-heading"><?= ucwords($page_title) ?></h1>
   <form class="space-y-3">
     <div class="flex flex-col lg:flex-row">
       <label for="full_name" class="lg:w-1/4 pt-1">Nama Lengkap <span style="color: red">*</span></label>

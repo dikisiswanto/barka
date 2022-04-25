@@ -3,7 +3,7 @@
 <main class="container space-y-5 my-5 flex-1">
   <div class="flex flex-col lg:flex-row items-start gap-x-6 relative space-y-5 lg:space-y-0">
     <section class="w-full lg:w-2/3 space-y-4">
-      <h3 class="font-heading text-2xl capitalize font-black text-title"><span class="fa fa-search"></span> <?= ucwords($page_title) ?></h3>
+      <h1 class="font-heading text-2xl capitalize font-black text-title"><span class="fa fa-search"></span> <?= ucwords($page_title) ?></h3>
       <div class="grid grid-cols-1 gap-5">
         <?php if($query->num_rows() > 0) : ?>
           <?php foreach($query->result() as $post) : ?>

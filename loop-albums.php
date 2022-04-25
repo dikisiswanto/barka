@@ -44,7 +44,7 @@
 </script>
 
 <main class="container space-y-5 my-5 flex-1">
-  <h2 class="text-title text-2xl font-bold font-heading"><?= $page_title ?></h2>
+  <h1 class="text-title text-2xl font-bold font-heading"><?= $page_title ?></h1>
   <div class="grid grid-cols-1 lg:grid-cols-4 gap-4">
     <?php foreach($query->result() as $album) : ?>
       <figure class="shadow-md bg-white overflow-hidden album flex flex-col justify-between">

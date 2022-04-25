@@ -11,10 +11,10 @@
     <div class="group flex justify-between">
       <a href="<?= site_url() ?>" class="flex lg:flex-row items-center py-2 space-x-5">
         <img src="<?=base_url('media_library/images/'. $this->session->logo);?>" alt="Logo <?=$this->session->school_name?>" class="w-12 lg:w-16 h-auto">
-        <h1 class="flex flex-col font-black text-white text-justify font-heading">
+        <span class="flex flex-col font-black text-white text-justify font-heading">
           <span class="text-lg lg:text-xl"><?= $initial_name ?></span>
           <span class="uppercase text-xl lg:text-2xl tracking-wide"><?= $last_name ?></span>
-        </h1>
+        </span>
       </a>
       <button class="lg:hidden px-2 text-xl active:outline-none focus:outline-none h-auto z-50 transition duration-200 menu-button"><span class="fa fa-bars text-white"></span></button>
     </div>

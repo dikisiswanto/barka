@@ -36,7 +36,7 @@
 </script>
 
 <main class="container space-y-5 my-5 flex-1">
-  <h2 class="text-title text-2xl font-bold font-heading"><?= $page_title ?></h2>
+  <h1 class="text-title text-2xl font-bold font-heading"><?= $page_title ?></h1>
   <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
     <?php foreach($query->result() as $video) : ?>
       <iframe width="100%" height="280" src="https://www.youtube.com/embed/<?= $video->post_content ?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="w-full videos"></iframe>

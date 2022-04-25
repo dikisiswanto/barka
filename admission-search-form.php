@@ -8,7 +8,7 @@
   })
 </script>
 <main class="container space-y-5 my-5 flex-1">
-  <h2 class="text-title text-2xl font-bold font-heading"><?= $page_title ?></h2>
+  <h1 class="text-title text-2xl font-bold font-heading"><?= $page_title ?></h1>
     
   <form action="" class="space-y-3">
     <div class="flex flex-col lg:flex-row">

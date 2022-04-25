@@ -28,7 +28,7 @@
         for (var z in rows) {
           const row = rows[ z ];
           const template = `
-          <div class="profile-alumni">
+          <div class="profile-student">
             <div class="shadow bg-white flex flex-col lg:flex-row lg:items-center justify-between py-2 px-3">
               <div class="lg:w-1/4"><img src="${row.photo}" class="thumbnail w-full text-center mx-auto"/></div>
               <div class="lg:w-3/4">
@@ -91,11 +91,11 @@
       <div class="grid gap-4 lg:grid-cols-3 items-center lg:w-3/4">
         <div class="w-full">
           <label class="mr-sm-2 sr-only" for="academic_year_id"><?=__session('_academic_year')?></label>
-          <?=form_dropdown('academic_year_id', $academic_years, __session('current_academic_year_id'), 'class="form-select w-full" id="academic_year_id"');?>
+          <?=form_dropdown('academic_year_id', $academic_year_dropdown, __session('current_academic_year_id'), 'class="form-select w-full" id="academic_year_id"');?>
         </div>
         <div class="w-full">
           <label class="mr-sm-2 sr-only" for="class_group_id">Kelas</label>
-          <?=form_dropdown('class_group_id', $class_groups, '', 'class="form-select w-full" id="class_group_id"');?>
+          <?=form_dropdown('class_group_id', $class_group_dropdown, '', 'class="form-select w-full" id="class_group_id"');?>
         </div>
         <div class="w-full">
           <button type="button" onclick="get_students()" class="bg-secondary opacity-80 transition duration-100 hover:opacity-100 text-white rounded py-2 px-5 text-center"><i class="fa fa-search mr-2"></i> CARI</button>
