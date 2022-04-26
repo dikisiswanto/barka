@@ -13,9 +13,18 @@ Tema ini mendukung variasi warna sesuai yang diinginkan. Silakan buka file `asse
 
 ## Lisensi dan Syarat
 
-Lisensi tema ini memperbolehkan Anda untuk menggunakan, menyebarluaskan, dan memodifikasi kode sumber. Segala bentuk modifikasi dan turunannya tetap merujuk pada lisensi awal tema ini.
-
-Anda **DILARANG** untuk menyebarkan atau memperjualbelikan tema ini untuk tujuan komersial dalam bentuk apapun, baik dalam versi asli maupun hasil modifikasi. Anda juga tidak diperkenankan untuk menghapus atau menghilangkan informasi pemegang hak cipta atas tema ini.
+```
+Hak cipta (c) 2021 - Diki Siswanto
+Lisensi tema ini memperbolehkan Anda untuk menggunakan, menyebarluaskan, dan memodifikasi kode sumber. 
+Segala bentuk modifikasi dan turunannya tetap merujuk pada lisensi awal tema ini.
+Tema ini dibuat dan disediakan apa adanya tanpa jaminan atau garansi. 
+Kami tidak menjamin bahwa kode sumber tema ini akan terus ada dan tersedia untuk semua pengguna.
+Selain itu, tidak ada jaminan bahwa kode sumber yang ada selalu lengkap, akurat, atau tidak mengandung kesalahan/bug.
+Kami tidak bertanggung jawab atas segala resiko yang timbul akibat penggunaan tema ini.
+Segala resiko dan konsekuensi menjadi tanggung jawab Anda sepenuhnya sebagai pengguna.
+Anda DILARANG menggunakan atau menyebarkan tema ini untuk tujuan komersial dalam bentuk apapun, baik dalam versi asli maupun hasil modifikasi.
+Anda juga tidak diperkenankan untuk menghapus atau menghilangkan informasi pemegang hak cipta atas tema ini.
+```
 
 ## Kontribusi
 
