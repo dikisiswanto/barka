@@ -10,7 +10,7 @@
     <div class="space-y-3 p-4">
       <h5 class="text-center uppercase font-bold"><?=$this->session->headmaster?></h5>
       <p class="text-center">- <?=__session('_headmaster')?> -</p>
-      <p class="text-justify"><?= word_limiter(strip_tags(get_opening_speech()), 20) ?></p>
+      <p class="text-justify"><?=substr(word_limiter(strip_tags(get_opening_speech()), 20), 0, strrpos(trim(word_limiter(strip_tags(get_opening_speech()), 20), " "), " "))."..."?></p>
     </div>
     <div class="text-center">
       <a href="<?= site_url(opening_speech_route()) ?>" class="text-sm">Selengkapnya</a>
