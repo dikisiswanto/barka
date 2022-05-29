@@ -7,7 +7,7 @@
 <head>
   <?php $this->load->view(THEME_PATH . 'components/meta') ?>
   <?php $this->load->view(THEME_PATH . 'components/source_css') ?>
-  
+
   <script type="text/javascript">
   const _BASE_URL = '<?=base_url();?>';
   const _CURRENT_URL = '<?=current_url();?>';
@@ -26,6 +26,14 @@
   <noscript>You need to enable javaScript to run this app.</noscript>
 </head>
 <body class="flex flex-col min-h-screen">
+   <div class="secondary-color preloader">
+    <div class="preloader-inner">
+      <div class="preloader-icon">
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
   <?php $this->load->view(THEME_PATH . 'components/header') ?>
 
   <?php $this->load->view($content)?>
@@ -33,6 +41,13 @@
   <!-- COPYRIGHT - DO NOT MODIFY!-->
     <?php $this->load->view(THEME_PATH . 'components/footer') ?>
   <!-- END COPYRIGHT -->
+
+  <script>
+    $(window).on('load', function() {
+      $('.preloader').fadeOut(1000);
+
+      });
+  </script>
 
 </body>
 </html>
