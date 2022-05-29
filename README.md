@@ -1,4 +1,7 @@
 # Tema Barka
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
 ![screenshot](https://blogger.googleusercontent.com/img/a/AVvXsEjOEBjVmlJ5NKWS1cq__AX4-9NA3WZjhD7lm8jt063ZmrzwdhGO_TXFee9U3ag9zO37P6j3SG1upTdhK_vPzbEe0VISqlJRcq_M7i_bEJQweZWsGf7bVYlg471vRFTeCRVR0o3rVxthajpZBie_JwjJSCdfv2ihMEsUV_WpstR-2UPJA98F-Kkp3vK_0g=w640-h400)
 
 [Tema barka](https://www.trivusi.web.id/2021/12/download-tema-cms-sekolahku-gratis.html) adalah tema khusus untuk CMS Sekolahku ([sekolahku.web.id](https://sekolahku.web.id)). Tema ini dikembangkan dengan basis `tailwindCSS`
@@ -33,3 +36,23 @@ Anda dapat turut serta mengembangkan tema ini dengan melakukan [pull request](ht
 ## Donasi
 
 Anda juga bisa ikut kontribusi dengan cara berdonasi. Tema ini saya buat secara sukarela serta membutuhkan waktu dan biaya. Donasi Anda dapat membantu saya terus meluangkan waktu untuk melakukan pembaruan (*update*) tema secara berkala.
+
+## Contributors ✨
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tr>
+    <td align="center"><a href="http://www.exampatra.com"><img src="https://avatars.githubusercontent.com/u/41516540?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Ari Martana</b></sub></a><br /><a href="https://github.com/dikisiswanto/barka/commits?author=arimartana" title="Code">💻</a></td>
+  </tr>
+</table>
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
