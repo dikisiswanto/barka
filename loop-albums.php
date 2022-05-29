@@ -1,8 +1,8 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed');?>
+<?php defined('BASEPATH') OR exit('No direct script access allowed') ?>
 
 <script type="text/javascript">
   let page = 1;
-  const total_page = "<?=$total_page;?>";
+  const total_page = "<?= $total_page ?>";
   $(document).ready(function() {
     if (parseInt(total_page) == page || parseInt(total_page) == 0) {
       $('.more-albums').remove();
@@ -53,7 +53,7 @@
           <?= $album->album_title ?>
         </figcaption>
         <div class="px-3 py-2">
-          <button type="button" onclick="photo_preview(<?=$album->id?>)" class="bg-secondary text-white block w-full py-2 text-center mx-2"><i class="fa fa-search mr-2"></i> Lihat</button>
+          <button type="button" onclick="photo_preview(<?= $album->id ?>)" class="bg-secondary text-white block w-full py-2 text-center mx-2"><i class="fa fa-search mr-2"></i> Lihat</button>
         </div>
       </figure>
     <?php endforeach ?>

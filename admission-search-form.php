@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed');?>
+<?php defined('BASEPATH') OR exit('No direct script access allowed') ?>
 
 <script>
   $(document).ready(function () {
@@ -28,17 +28,17 @@
         </div>
       </div>
     </div>
-    <?php if (NULL !== __session('recaptcha_status') && __session('recaptcha_status') == 'enable') { ?>
+    <?php if (NULL !== __session('recaptcha_status') && __session('recaptcha_status') == 'enable') : ?>
       <div class="flex flex-col lg:flex-row">
         <label class="lg:w-1/4 pt-1"></label>
         <div class="lg:w-3/4">
-          <div class="g-recaptcha" data-sitekey="<?=$recaptcha_site_key?>"></div>
+          <div class="g-recaptcha" data-sitekey="<?= $recaptcha_site_key ?>"></div>
         </div>
       </div>
-    <?php } ?>
+    <?php endif ?>
     <div class="flex flex-col lg:flex-row pt-3">
       <span class="lg:w-1/4"></span>
-      <button type="button" onclick="<?=$onclick?>; return false;" class="bg-secondary opacity-80 transition duration-100 hover:opacity-100 text-white rounded py-2 px-5"><i class="fa fa-send"></i> <?=$button?></button>
+      <button type="button" onclick="<?= $onclick ?>; return false;" class="bg-secondary opacity-80 transition duration-100 hover:opacity-100 text-white rounded py-2 px-5"><i class="fa fa-send"></i> <?= $button ?></button>
     </div>
   </form>
 </main>

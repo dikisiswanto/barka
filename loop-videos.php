@@ -1,7 +1,7 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed');?>
+<?php defined('BASEPATH') OR exit('No direct script access allowed') ?>
 <script type="text/javascript">
   let page = 1;
-  const total_page = "<?=$total_page;?>";
+  const total_page = "<?= $total_page ?>";
   $(document).ready(function() {
     if (parseInt(total_page) == page || parseInt(total_page) == 0) {
       $('.more-videos').remove();

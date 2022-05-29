@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed');?>
+<?php defined('BASEPATH') OR exit('No direct script access allowed') ?>
 <script type="text/javascript">
   $( document ).ready(function() {
     var values = get_values();
@@ -90,12 +90,12 @@
     <form onsubmit="return false;" class="mb-3">
       <div class="grid gap-4 lg:grid-cols-3 items-center lg:w-3/4">
         <div class="w-full">
-          <label class="mr-sm-2 sr-only" for="academic_year_id"><?=__session('_academic_year')?></label>
-          <?=form_dropdown('academic_year_id', $academic_year_dropdown, __session('current_academic_year_id'), 'class="form-select w-full" id="academic_year_id"');?>
+          <label class="mr-sm-2 sr-only" for="academic_year_id"><?= __session('_academic_year') ?></label>
+          <?= form_dropdown('academic_year_id', $academic_years, __session('current_academic_year_id'), 'class="form-select w-full" id="academic_year_id"') ?>
         </div>
         <div class="w-full">
           <label class="mr-sm-2 sr-only" for="class_group_id">Kelas</label>
-          <?=form_dropdown('class_group_id', $class_group_dropdown, '', 'class="form-select w-full" id="class_group_id"');?>
+          <?= form_dropdown('class_group_id', $class_groups, '', 'class="form-select w-full" id="class_group_id"') ?>
         </div>
         <div class="w-full">
           <button type="button" onclick="get_students()" class="bg-secondary opacity-80 transition duration-100 hover:opacity-100 text-white rounded py-2 px-5 text-center"><i class="fa fa-search mr-2"></i> CARI</button>

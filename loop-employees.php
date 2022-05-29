@@ -1,7 +1,7 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed');?>
+<?php defined('BASEPATH') OR exit('No direct script access allowed') ?>
 <script type="text/javascript">
 let page = 1;
-const total_page = "<?=$total_page;?>";
+const total_page = "<?= $total_page ?>";
 $(document).ready(function() {
   if (parseInt(total_page) == page || parseInt(total_page) == 0) {
     $('.more-employees').remove();
@@ -107,32 +107,32 @@ function get_employees() {
                 <dl class="block flex-wrap text-gray-500 divide-y">
                   <div class="flex justify-between">
                     <dt>Nama Lengkap</dt>
-                    <dd><?=$row->full_name?></dd>
+                    <dd><?= $row->full_name ?></dd>
                   </div>
 
                   <div class="flex justify-between">
                     <dt>NIK</dt>
-                    <dd><?=$row->nik?></dd>
+                    <dd><?= $row->nik ?></dd>
                   </div>
 
                   <div class="flex justify-between">
                     <dt>Jenis Kelamin</dt>
-                    <dd><?=$row->gender?></dd>
+                    <dd><?= $row->gender ?></dd>
                   </div>
 
                   <div class="flex justify-between">
                     <dt>Tempat Lahir</dt>
-                    <dd><?=$row->birth_place?></dd>
+                    <dd><?= $row->birth_place ?></dd>
                   </div>
 
                   <div class="flex justify-between">
                     <dt>Tanggal Lahir</dt>
-                    <dd><?=indo_date($row->birth_date)?></dd>
+                    <dd><?= indo_date($row->birth_date) ?></dd>
                   </div>
 
                   <div class="flex justify-between">
                     <dt>Jenis GTK</dt>
-                    <dd><?=$row->employment_type?></dd>
+                    <dd><?= $row->employment_type ?></dd>
                   </div>
                 </dl>
               </div>

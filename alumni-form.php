@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed');?>
+<?php defined('BASEPATH') OR exit('No direct script access allowed') ?>
 
 <script>
   $(document).ready(function () {
@@ -19,7 +19,7 @@
     <div class="flex flex-col lg:flex-row">
       <label for="gender" class="lg:w-1/4 pt-1">Jenis Kelamin <span style="color: red">*</span></label>
       <div class="lg:w-3/4">
-        <?=form_dropdown('gender', ['' => 'Pilih :', 'M' => 'Laki-laki', 'F' => 'Perempuan'], '', 'class="form-select w-full" id="gender"')?>
+        <?= form_dropdown('gender', ['' => 'Pilih :', 'M' => 'Laki-laki', 'F' => 'Perempuan'], '', 'class="form-select w-full" id="gender"') ?>
       </div>
     </div>
     <div class="flex flex-col lg:flex-row">
@@ -40,7 +40,7 @@
       </div>
     </div>
     <div class="flex flex-col lg:flex-row">
-      <label for="identity_number" class="lg:w-1/4 pt-1"><?=__session('_identity_number')?></label>
+      <label for="identity_number" class="lg:w-1/4 pt-1"><?= __session('_identity_number') ?></label>
       <div class="lg:w-3/4">
         <input type="text" class="form-input w-full" id="identity_number" name="identity_number">
       </div>
@@ -76,14 +76,14 @@
         <small class="form-text text-muted">Foto harus JPG dan ukuran file maksimal 1 Mb</small>
       </div>
     </div>
-    <?php if (NULL !== __session('recaptcha_status') && __session('recaptcha_status') == 'enable') { ?>
+    <?php if (NULL !== __session('recaptcha_status') && __session('recaptcha_status') == 'enable') : ?>
     <div class="flex flex-col lg:flex-row">
       <label class="lg:w-1/4 pt-1"></label>
       <div class="lg:w-3/4">
-        <div class="g-recaptcha" data-sitekey="<?=$recaptcha_site_key?>"></div>
+        <div class="g-recaptcha" data-sitekey="<?= $recaptcha_site_key ?>"></div>
       </div>
     </div>
-    <?php } ?>
+    <?php endif ?>
     <div class="flex flex-col lg:flex-row pt-3">
       <span class="lg:w-1/4"></span>
       <button type="button" onclick="alumni_registration(); return false;" class="bg-secondary opacity-80 transition duration-100 hover:opacity-100 text-white rounded py-2 px-5"><i class="fa fa-send"></i> Kirim</button>

@@ -1,4 +1,4 @@
-<?php $image_sliders = get_image_sliders(); ?>
+<?php $image_sliders = get_image_sliders() ?>
 <?php if($image_sliders->num_rows() > 0) : ?>
   <section class="owl-carousel o-slider w-full max-h-full max-w-slider mx-auto">
     <?php foreach($image_sliders->result() as $slider) : ?>

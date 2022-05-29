@@ -1,6 +1,6 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed');?>
+<?php defined('BASEPATH') OR exit('No direct script access allowed') ?>
 
-<?php $quotes = get_quotes(); ?>
+<?php $quotes = get_quotes() ?>
 
 <?php if($quotes->num_rows() > 0) : ?>
   <div class="flex bg-gray-200 overflow-hidden relative text-sm">

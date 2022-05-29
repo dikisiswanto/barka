@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed');?>
+<?php defined('BASEPATH') OR exit('No direct script access allowed') ?>
 
 <main class="container space-y-5 my-5 flex-1">
   <div class="flex flex-col lg:flex-row items-start gap-x-6 relative space-y-5 lg:space-y-0">
@@ -12,7 +12,7 @@
               <div class="w-full h-48 lg:h-full lg:w-5/12 flex-shrink-0 bg-gray-300 flex items-center justify-center">
 
                 <?php $post_image = 'media_library/posts/medium/'.$post->post_image; ?>
-                <?php $poster = is_file('./'.$post_image) ? base_url($post_image) : base_url('media_library/images/'. $this->session->logo) ?>
+                <?php $poster = is_file('./'.$post_image) ? base_url($post_image) : base_url('media_library/images/'. __session('logo')) ?>
                 <?php $poster_class = is_file('./'.$post_image) ? 'w-full object-cover object-center h-inherit' : 'w-16' ?>
                 <?php $link = site_url('read/'.$post->id.'/'.$post->post_slug) ?>
                 <img src="<?= $poster ?>" alt="<?= $post->post_title ?>" class="<?= $poster_class ?>">

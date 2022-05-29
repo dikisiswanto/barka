@@ -1,16 +1,16 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed');?>
+<?php defined('BASEPATH') OR exit('No direct script access allowed') ?>
 
-<script src="<?=base_url('assets/plugins/Chart.js');?>"></script>
+<script src="<?= base_url('assets/plugins/Chart.js') ?>"></script>
 <script type="text/javascript">
   $( document ).ready( function() {
     const element_id = document.getElementById('canvas');
     new Chart(element_id, {
       type: 'bar',
       data: {
-        labels: <?=$labels;?>,
+        labels: <?= $labels ?>,
         datasets: [{
           label: '',
-          data: <?=$data;?>,
+          data: <?= $data ?>,
           borderWidth: 2,
           backgroundColor: 'rgba(75, 192, 192, 0.2)',
           borderColor: 'rgba(75, 192, 192, 1)'

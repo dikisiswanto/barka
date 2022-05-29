@@ -8,7 +8,7 @@
   background:none!important;
 }
 </style>
-<?php defined('BASEPATH') OR exit('No direct script access allowed');?>
+<?php defined('BASEPATH') OR exit('No direct script access allowed') ?>
 
 <main class="container space-y-5 my-5 flex-1">
   <div class="flex flex-col lg:flex-row items-start gap-x-6 relative space-y-5 lg:space-y-0">
@@ -16,7 +16,7 @@
       <h1 class="font-heading text-2xl capitalize font-black text-title"><span class="fa fa-phone"></span> <?= ucwords($page_title) ?></h1>
       <div class="mapouter border border-secondary mb-3">
         <div class="gmap_canvas">
-          <?=__session('map_location') ?>
+          <?= __session('map_location') ?>
         </div>
       </div>
       <form action="" method="post" class="space-y-3">
@@ -44,14 +44,14 @@
             <textarea class="form-textarea pt-1 w-full" id="comment_content" name="comment_content" rows="4"></textarea>
           </div>
         </div>
-        <?php if (NULL !== __session('recaptcha_status') && __session('recaptcha_status') == 'enable') { ?>
+        <?php if (NULL !== __session('recaptcha_status') && __session('recaptcha_status') == 'enable') : ?>
           <div class="flex flex-col lg:flex-row">
             <label class="lg:w-1/4 pt-1"></label>
             <div class="lg:w-3/4">
-              <div class="g-recaptcha" data-sitekey="<?=$recaptcha_site_key?>"></div>
+              <div class="g-recaptcha" data-sitekey="<?= $recaptcha_site_key ?>"></div>
             </div>
           </div>
-        <?php } ?>
+        <?php endif ?>
         <div class="flex flex-col lg:flex-row pt-3">
           <span class="lg:w-1/4"></span>
           <button type="button" onclick="send_message(); return false;" class="bg-secondary opacity-80 transition duration-100 hover:opacity-100 text-white rounded py-2 px-5"><i class="fa fa-send"></i> Kirim</button>

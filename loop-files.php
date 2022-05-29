@@ -1,7 +1,7 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed');?>
+<?php defined('BASEPATH') OR exit('No direct script access allowed') ?>
 <script type="text/javascript">
   let page = 1;
-  const total_page = "<?=$total_page;?>";
+  const total_page = "<?= $total_page ?>";
 
   $(document).ready(function() {
     if (parseInt(total_page) == page || parseInt(total_page) == 0) {
@@ -13,7 +13,7 @@
     page++;
     const data = {
       page_number: page,
-      slug: '<?=$this->uri->segment(2)?>'
+      slug: '<?= $this->uri->segment(2) ?>'
     };
     if ( page <= parseInt(total_page) ) {
       _H.Loading( true );
@@ -60,18 +60,18 @@
         </tr>
       </thead>
       <tbody>
-        <?php $no = 1; foreach($query->result() as $row) { ?>
+        <?php $no = 1; foreach($query->result() as $row) : ?>
           <tr class="text-center">
-            <td class="number"><?=$no?></td>
-            <td><?=$row->file_title?></td>
-            <td><?=filesize_formatted($row->file_size * 1024)?></td>
-            <td><?=$row->file_ext?></td>
-            <td><?=$row->file_counter?> Kali</td>
+            <td class="number"><?= $no ?></td>
+            <td><?= $row->file_title ?></td>
+            <td><?= filesize_formatted($row->file_size * 1024) ?></td>
+            <td><?= $row->file_ext ?></td>
+            <td><?= $row->file_counter ?> Kali</td>
             <td class="text-center">
-              <a href="<?=site_url('public/download/force_download/'.$row->id)?>"><i class="fa fa-download"></i></a>
+              <a href="<?= site_url('public/download/force_download/'.$row->id) ?>"><i class="fa fa-download"></i></a>
             </td>
           </tr>
-          <?php $no++; } ?>
+          <?php $no++; endforeach ?>
       </tbody>
     </table>
     <button type="button" onclick="get_files()" class="bg-secondary opacity-80 transition duration-100 hover:opacity-100 text-white rounded py-2 px-5 text-center more-files"><i class="fa fa-refresh"></i> Tampilkan Lebih Banyak</button>

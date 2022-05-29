@@ -1,10 +1,10 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed');?>
+<?php defined('BASEPATH') OR exit('No direct script access allowed') ?>
 
 <div class="backdrop"></div>
 <nav class="max-w-full bg-secondary px-3 shadow lg:border-b-4 lg:border-tertiary">
   <ul class="menu py-1 font-heading">
     <span class="block py-2 text-title mx-5 mb-3 lg:hidden tracking-wide font-medium">MENU</span>
-    <?php $menus = get_menus(); ?>
+    <?php $menus = get_menus() ?>
     <?php foreach($menus as $menu) : ?>
       <?php 
         $sub_nav = recursive_list($menu['children']);
@@ -25,7 +25,7 @@
           <ul class="menu-dropdown ml-4 lg:ml-0">
             <?php foreach($menu['children'] as $menu) : ?>
               <li>
-                <?php $url = base_url() . $menu['menu_url']; ?>
+                <?php $url = base_url() . $menu['menu_url'] ?>
                 <?php if($menu['menu_type'] == 'links') : ?>
                   <?php $url = $menu['menu_url'] ?>
                 <?php endif ?>

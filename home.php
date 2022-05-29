@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
+<?php defined('BASEPATH') or exit('No direct script access allowed') ?>
 
 <section class="lg:-mt-6">
   <?php $this->load->view(THEME_PATH . 'components/slider') ?>
@@ -13,10 +13,10 @@
         <span class="fa fa-map-marker text-5xl font-bold text-tertiary"></span>
         <div class="flex flex-col space-y-2">
           <div class="group">
-            <span class="block text-2xl font-heading font-bold"><?= $this->session->school_name ?></span>
-            <span class="block text-sm italic"><?= $this->session->tagline ?></span>
+            <span class="block text-2xl font-heading font-bold"><?= __session('school_name') ?></span>
+            <span class="block text-sm italic"><?= __session('tagline') ?></span>
           </div>
-          <span><?= $this->session->street_address ?>, <?= $this->session->village ?>, <?= $this->session->sub_district ?>, <?= $this->session->district ?></span>
+          <span><?= __session('street_address') ?>, <?= __session('village') ?>, <?= __session('sub_district') ?>, <?= __session('district') ?></span>
         </div>
       </div>
       <div class="lg:w-1/2 py-3 px-5 lg:py-2 flex items-center space-x-5">
@@ -24,17 +24,17 @@
         <div class="flex flex-col space-y-2">
           <span class="block text-2xl font-heading font-bold">Media Sosial</span>
           <ul class="grid w-3/4 grid-cols-4 gap-x-5">
-            <?php if (NULL !== $this->session->facebook && $this->session->facebook) : ?>
-              <li class="inline-block"><a target="_blank" rel="noopener" href="<?= $this->session->facebook ?>" class="h-8 w-8 rounded-full border-2 inline-flex items-center justify-center"><i class="fa fa-facebook text-lg" aria-label="facebook"></i></a></li>
+            <?php if (NULL !== __session('facebook') && __session('facebook')) : ?>
+              <li class="inline-block"><a target="_blank" rel="noopener" href="<?= __session('facebook') ?>" class="h-8 w-8 rounded-full border-2 inline-flex items-center justify-center"><i class="fa fa-facebook text-lg" aria-label="facebook"></i></a></li>
             <?php endif ?>
-            <?php if (NULL !== $this->session->twitter && $this->session->twitter) : ?>
-              <li class="inline-block"><a target="_blank" rel="noopener" href="<?= $this->session->twitter ?>" class="h-8 w-8 rounded-full border-2 inline-flex items-center justify-center"><i class="fa fa-twitter text-lg" aria-label="twitter"></i></a></li>
+            <?php if (NULL !== __session('twitter') && __session('twitter')) : ?>
+              <li class="inline-block"><a target="_blank" rel="noopener" href="<?= __session('twitter') ?>" class="h-8 w-8 rounded-full border-2 inline-flex items-center justify-center"><i class="fa fa-twitter text-lg" aria-label="twitter"></i></a></li>
             <?php endif ?>
-            <?php if (NULL !== $this->session->instagram && $this->session->instagram) : ?>
-              <li class="inline-block"><a target="_blank" rel="noopener" href="<?= $this->session->instagram ?>" class="h-8 w-8 rounded-full border-2 inline-flex items-center justify-center"><i class="fa fa-instagram text-lg" aria-label="instagram"></i></a></li>
+            <?php if (NULL !== __session('instagram') && __session('instagram')) : ?>
+              <li class="inline-block"><a target="_blank" rel="noopener" href="<?= __session('instagram') ?>" class="h-8 w-8 rounded-full border-2 inline-flex items-center justify-center"><i class="fa fa-instagram text-lg" aria-label="instagram"></i></a></li>
             <?php endif ?>
-            <?php if (NULL !== $this->session->youtube && $this->session->youtube) : ?>
-              <li class="inline-block"><a target="_blank" rel="noopener" href="<?= $this->session->youtube ?>" class="h-8 w-8 rounded-full border-2 inline-flex items-center justify-center"><i class="fa fa-youtube-play text-lg" aria-label="youtube"></i></a></li>
+            <?php if (NULL !== __session('youtube') && __session('youtube')) : ?>
+              <li class="inline-block"><a target="_blank" rel="noopener" href="<?= __session('youtube') ?>" class="h-8 w-8 rounded-full border-2 inline-flex items-center justify-center"><i class="fa fa-youtube-play text-lg" aria-label="youtube"></i></a></li>
             <?php endif ?>
           </ul>
         </div>
@@ -46,7 +46,7 @@
     <div class="w-full lg:w-2/3 space-y-4">
       <h3 class="font-heading text-2xl capitalize font-black text-title"><span class="fa fa-newspaper-o"></span> Artikel terkini</h3>
       <div class="grid grid-cols-1 gap-5">
-        <?php $posts = get_latest_posts(5); ?>
+        <?php $posts = get_latest_posts(5) ?>
         <?php if ($posts->num_rows() > 0) : ?>
           <?php foreach ($posts->result() as $post) : ?>
             <?php
@@ -58,7 +58,7 @@
               <div class="w-full h-48 lg:h-full lg:w-5/12 flex-shrink-0 bg-gray-300 flex items-center justify-center">
 
                 <?php $post_image = 'media_library/posts/medium/' . $post->post_image; ?>
-                <?php $poster = is_file('./' . $post_image) ? base_url($post_image) : base_url('media_library/images/' . $this->session->logo) ?>
+                <?php $poster = is_file('./' . $post_image) ? base_url($post_image) : base_url('media_library/images/' . __session('logo')) ?>
                 <?php $poster_class = is_file('./' . $post_image) ? 'w-full object-cover object-center h-inherit' : 'w-16' ?>
                 <?php $link = site_url('read/' . $post->id . '/' . $post->post_slug) ?>
 
@@ -86,7 +86,7 @@
         <?php endif ?>
       </div>
 
-      <?php $albums = get_albums(2); ?>
+      <?php $albums = get_albums(2) ?>
       <?php if ($albums->num_rows() > 0) : ?>
         <h3 class="font-heading text-2xl capitalize font-black text-title py-2"><i class="fa fa-camera"></i> Album Galeri</h3>
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">

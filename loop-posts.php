@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed');?>
+<?php defined('BASEPATH') OR exit('No direct script access allowed') ?>
 
 <script type="text/javascript">
   async function isUrlFound(url) {
@@ -21,7 +21,7 @@
   }
 
   let page = 1;
-  const total_page = "<?=$total_page;?>";
+  const total_page = "<?= $total_page ?>";
   $(document).ready(function() {
     if (parseInt(total_page) == page || parseInt(total_page) == 0) {
       $('button.load-more').remove();
@@ -30,9 +30,9 @@
 
   function get_posts() {
     page++;
-    const segment_1 = '<?=$this->uri->segment(1)?>';
-    const segment_2 = '<?=$this->uri->segment(2)?>';
-    const segment_3 = '<?=$this->uri->segment(3)?>';
+    const segment_1 = '<?= $this->uri->segment(1) ?>';
+    const segment_2 = '<?= $this->uri->segment(2) ?>';
+    const segment_3 = '<?= $this->uri->segment(3) ?>';
     let url = '';
     const data = {
       'page_number': page
@@ -60,7 +60,7 @@
           const row = rows[ z ];
           let image = `${_BASE_URL}media_library/posts/medium/${row.post_image}`;
           const isImageExist = isUrlFound(image);
-          image = isImageExist ? image : '<?=base_url('media_library/images/'. $this->session->logo);?>';
+          image = isImageExist ? image : '<?= base_url('media_library/images/'. __session('logo')) ?>';
           const classImage = isImageExist ? 'w-full object-cover object-center h-inherit' : 'w-16';
           const date = new Date(row.created_at);
           const monthNameInID = ['Jan', 'Peb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul', 'Agu', 'Sep', 'Okt', 'Nop', 'Des'];
@@ -113,7 +113,7 @@
               <div class="w-full h-48 lg:h-full lg:w-5/12 flex-shrink-0 bg-gray-300 flex items-center justify-center">
 
                 <?php $post_image = 'media_library/posts/medium/'.$post->post_image; ?>
-                <?php $poster = is_file('./'.$post_image) ? base_url($post_image) : base_url('media_library/images/'. $this->session->logo) ?>
+                <?php $poster = is_file('./'.$post_image) ? base_url($post_image) : base_url('media_library/images/'. __session('logo')) ?>
                 <?php $poster_class = is_file('./'.$post_image) ? 'w-full object-cover object-center h-inherit' : 'w-16' ?>
                 <?php $link = site_url('read/'.$post->id.'/'.$post->post_slug) ?>
                 <img src="<?= $poster ?>" alt="<?= $post->post_title ?>" class="<?= $poster_class ?>">

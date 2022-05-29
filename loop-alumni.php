@@ -1,7 +1,7 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed');?>
+<?php defined('BASEPATH') OR exit('No direct script access allowed') ?>
 <script type="text/javascript">
 let page = 1;
-const total_page = "<?=$total_page;?>";
+const total_page = "<?= $total_page ?>";
 $(document).ready(function() {
   if (parseInt(total_page) == page || parseInt(total_page) == 0) {
     $('.more-alumni').remove();
@@ -112,37 +112,37 @@ function get_alumni() {
                 <dl class="block flex-wrap text-gray-500 divide-y">
                   <div class="flex justify-between">
                     <dt>Nama Lengkap</dt>
-                    <dd><?=$row->full_name?></dd>
+                    <dd><?= $row->full_name ?></dd>
                   </div>
 
                   <div class="flex justify-between">
-                    <dt><?=__session('_identity_number')?></dt>
-                    <dd><?=$row->identity_number?></dd>
+                    <dt><?= __session('_identity_number') ?></dt>
+                    <dd><?= $row->identity_number ?></dd>
                   </div>
 
                   <div class="flex justify-between">
                     <dt>Jenis Kelamin</dt>
-                    <dd><?=$row->gender?></dd>
+                    <dd><?= $row->gender ?></dd>
                   </div>
 
                   <div class="flex justify-between">
                     <dt>Tempat Lahir</dt>
-                    <dd><?=$row->birth_place?></dd>
+                    <dd><?= $row->birth_place ?></dd>
                   </div>
 
                   <div class="flex justify-between">
                     <dt>Tanggal Lahir</dt>
-                    <dd><?=indo_date($row->birth_date)?></dd>
+                    <dd><?= indo_date($row->birth_date) ?></dd>
                   </div>
 
                   <div class="flex justify-between">
                     <dt>Tahun Masuk</dt>
-                    <dd><?=$row->start_date?></dd>
+                    <dd><?= $row->start_date ?></dd>
                   </div>
 
                   <div class="flex justify-between">
                     <dt>Tahun Keluar</dt>
-                    <dd><?=$row->end_date?></dd>
+                    <dd><?= $row->end_date ?></dd>
                   </div>
                 </dl>
               </div>
