@@ -37,9 +37,9 @@ Anda dapat turut serta mengembangkan tema ini dengan melakukan [pull request](ht
 
 Anda juga bisa ikut kontribusi dengan cara berdonasi. Tema ini saya buat secara sukarela serta membutuhkan waktu dan biaya. Donasi Anda dapat membantu saya terus meluangkan waktu untuk melakukan pembaruan (*update*) tema secara berkala.
 
-## Contributors ✨
+## Kontributor ✨
 
-Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+Terima kasih kepada kontributor yang turut andil mengembangkan tema ini ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
@@ -54,5 +54,3 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- prettier-ignore-end -->
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->
-
-This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
