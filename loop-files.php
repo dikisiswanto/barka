@@ -26,13 +26,13 @@
         for (const z in rows) {
           var row = rows[ z ];
           html += '<tr>';
-          html += '<td class="number">' + no + '</td>';
-          html += '<td>' + row.file_title + '</td>';
-          html += '<td>' + (_H.FormatBytes(row.file_size * 1024)) + '</td>';
-          html += '<td>' + row.file_ext + '</td>';
-          html += '<td>' + row.file_counter + '</td>';
-          html += '<td>';
-          html += '<a href="' + _BASE_URL + 'public/download/force_download/' + row.id + '"><i class="fa fa-download"></i></a>';
+          html += '<td class="number border-b py-2">' + no + '</td>';
+          html += '<td class="border-b py-2">' + row.file_title + '</td>';
+          html += '<td class="border-b py-2">' + (_H.FormatBytes(row.file_size * 1024)) + '</td>';
+          html += '<td class="border-b py-2">' + row.file_ext + '</td>';
+          html += '<td class="border-b py-2">' + row.file_counter + '</td>';
+          html += '<td class="text-center border-b py-2">';
+          html += '<a href="' + _BASE_URL + 'public/download/force_download/' + row.id + '" class="text-secondary"><i class="fa fa-download"></i></a>';
           html += '</td>';
           html += '</tr>';
           no++;
@@ -48,27 +48,27 @@
 <main class="container space-y-5 my-5 flex-1">
   <div class="space-y-4">
     <h1 class="font-heading text-2xl font-black text-title"><span class="fa fa-bar"></span> <?= ucwords($page_title) ?></h1>
-    <table class="table w-full table-auto">
+    <table class="table w-full table-auto py-2">
       <thead>
         <tr>
-          <th width="40px">NO</th>
-          <th>NAMA FILE</th>
-          <th>UKURAN</th>
-          <th>TIPE</th>
-          <th>DIUNDUH</th>
-          <th width="40px" class="text-center"><i class="fa fa-download"></i></th>
+          <th class="border-b py-2" width="40px">NO</th>
+          <th class="border-b py-2">NAMA FILE</th>
+          <th class="border-b py-2">UKURAN</th>
+          <th class="border-b py-2">TIPE</th>
+          <th class="border-b py-2">DIUNDUH</th>
+          <th class="border-b py-2" width="40px" class="text-center"><i class="fa fa-download"></i></th>
         </tr>
       </thead>
       <tbody>
         <?php $no = 1; foreach($query->result() as $row) : ?>
           <tr class="text-center">
-            <td class="number"><?= $no ?></td>
-            <td><?= $row->file_title ?></td>
-            <td><?= filesize_formatted($row->file_size * 1024) ?></td>
-            <td><?= $row->file_ext ?></td>
-            <td><?= $row->file_counter ?> Kali</td>
-            <td class="text-center">
-              <a href="<?= site_url('public/download/force_download/'.$row->id) ?>"><i class="fa fa-download"></i></a>
+            <td class="number border-b py-2"><?= $no ?></td>
+            <td class="border-b py-2"><?= $row->file_title ?></td>
+            <td class="border-b py-2"><?= filesize_formatted($row->file_size * 1024) ?></td>
+            <td class="border-b py-2"><?= $row->file_ext ?></td>
+            <td class="border-b py-2"><?= $row->file_counter ?> Kali</td>
+            <td class="text-center border-b py-2">
+              <a href="<?= site_url('public/download/force_download/'.$row->id) ?>" class="text-secondary"><i class="fa fa-download"></i></a>
             </td>
           </tr>
           <?php $no++; endforeach ?>
